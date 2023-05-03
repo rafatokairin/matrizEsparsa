@@ -1,5 +1,5 @@
 # basicamente:
-gera duas matrizes esparsas a partir da leitura de um arquivo e implementa de forma eficiente as seguintes funções:
+gera duas matrizes esparsas 15x15 a partir da leitura de um arquivo e implementa de forma eficiente as seguintes funções:
 
 - escrever matriz condensada e matriz completa a partir da condensada.
 
