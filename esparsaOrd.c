@@ -48,7 +48,7 @@ int main()
     info(&C);
     printf("\nSoma abaixo diagonal principal multiplicacao: %d\n", somaAbaixoDiag(&C));
     reiniciar(&A); reiniciar(&B); reiniciar(&C);
-    // libera arranjos
+    // libera primeiro arranjo
     free(A.arranjo); free(B.arranjo); free(C.arranjo);
     return 0;
 }
