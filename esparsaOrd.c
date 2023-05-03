@@ -42,12 +42,14 @@ int main()
     somar(&A, &B, &C);
     info(&C);
     printf("\nSoma abaixo diagonal principal soma: %d\n", somaAbaixoDiag(&C));
-    freeMatriz(&C); criar(&C);
+    freeMatriz(&C);
     printf("\nMultiplicacao matriz A e B:\n");
     multiplicar(&A, &B, &C);
     info(&C);
     printf("\nSoma abaixo diagonal principal multiplicacao: %d\n", somaAbaixoDiag(&C));
     freeMatriz(&A); freeMatriz(&B); freeMatriz(&C);
+    // libera arranjos
+    free(A.arranjo); free(B.arranjo); free(C.arranjo);
     return 0;
 }
 
@@ -205,6 +207,6 @@ void freeMatriz(Matriz *p)
             end = end->prox;
             free(ant);
         }
+        p->arranjo[lin] = NULL;
     }
-    free(p->arranjo);
 }
