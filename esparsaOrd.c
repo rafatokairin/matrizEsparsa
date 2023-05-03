@@ -16,7 +16,7 @@ Matriz multiplicar(Matriz *, Matriz *, Matriz *);
 Matriz somar(Matriz *, Matriz *, Matriz *);
 void inserir(Matriz *, int, int, int);
 void lerMatrizes(Matriz *, Matriz *);
-void freeMatriz(Matriz *);
+void reiniciar(Matriz *);
 void imprimir(Matriz *);
 void criar(Matriz *);
 void info(Matriz *);
@@ -42,12 +42,12 @@ int main()
     somar(&A, &B, &C);
     info(&C);
     printf("\nSoma abaixo diagonal principal soma: %d\n", somaAbaixoDiag(&C));
-    freeMatriz(&C);
+    reiniciar(&C);
     printf("\nMultiplicacao matriz A e B:\n");
     multiplicar(&A, &B, &C);
     info(&C);
     printf("\nSoma abaixo diagonal principal multiplicacao: %d\n", somaAbaixoDiag(&C));
-    freeMatriz(&A); freeMatriz(&B); freeMatriz(&C);
+    reiniciar(&A); reiniciar(&B); reiniciar(&C);
     // libera arranjos
     free(A.arranjo); free(B.arranjo); free(C.arranjo);
     return 0;
@@ -196,7 +196,7 @@ int somaAbaixoDiag(Matriz *p)
     return soma;
 }
 
-void freeMatriz(Matriz *p)
+void reiniciar(Matriz *p)
 {
     for (int lin = 0; lin < p->lin; lin++)
     {
