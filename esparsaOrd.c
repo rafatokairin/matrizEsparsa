@@ -141,9 +141,7 @@ void info(Matriz *p)
         No *end = p->arranjo[lin];
         while (end != NULL)
         {   
-            // verifica para nao imprimir lin que aponta pra NULL
-            if (end->valor != 0)
-                printf("%d [%d][%d]\n", end->valor, lin, end->col);
+            printf("%d [%d][%d]\n", end->valor, lin, end->col);
             end = end->prox;
         }
     }
