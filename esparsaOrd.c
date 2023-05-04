@@ -136,13 +136,17 @@ int buscarValor(Matriz *p, int lin, int col)
 
 void info(Matriz *p)
 {
-    for (int i = 0; i < p->lin; i++)
-        for (int j = 0; j < p->col; j++)
-        {
-            int valor = buscarValor(p, i, j);
-            if (valor != 0)
-                printf("%d [%d][%d]\n", valor, i, j);
+    for (int lin = 0; lin < p->lin; lin++)
+    {
+        No *end = p->arranjo[lin];
+        while (end != NULL)
+        {   
+            // verifica para nao imprimir lin que aponta pra NULL
+            if (end->valor != 0)
+                printf("%d [%d][%d]\n", end->valor, lin, end->col);
+            end = end->prox;
         }
+    }
 }
 
 void imprimir(Matriz *p)
