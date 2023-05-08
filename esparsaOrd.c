@@ -178,7 +178,8 @@ Matriz multiplicar(Matriz *A, Matriz *B, Matriz *C)
             int soma = 0;
             for (int k = 0; k < A->col; k++)
                 soma += buscarValor(A, i, k) * buscarValor(B, k, j);
-            inserir(C, soma, i, j);
+            if (soma != 0)
+                inserir(C, soma, i, j);
         }
     return *C;
 }
